@@ -1,17 +1,10 @@
-import React, { useState } from "react";
-import "./components/css/App.css";
-import Form from "./components/Form";
-import Todolist from "./components/Todolist";
+import React, { useState } from 'react';
+import './App.css';
+import Form from './components/Form';
+import Todolist from './components/Todolist';
 
 function App() {
-  const [inputText, setInputText] = useState("");
-  const [activities, setActivities] = useState([
-    {
-      title: "Do it!",
-    },
-  ]);
-
-
+  const [activities, setActivities] = useState([]);
 
   return (
     <div className="App">
@@ -22,11 +15,9 @@ function App() {
       <Form
         activities={activities}
         setActivities={setActivities}
-        inputText={inputText}
-        setInputText={setInputText}
       />
 
-      <Todolist />
+      <Todolist activities={activities} />
     </div>
   );
 }

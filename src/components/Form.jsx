@@ -1,31 +1,31 @@
-import React from "react";
-import "../components/css/form.module.css";
+import React, { useState } from 'react';
+import './css/form.module.css';
 
-function Form({ inputText, setInputText, activities, setActivites, }) {
-  
-  const inputTextHandler = (e) => {
-  const value = e.target.value;
-  // const { inputText } = props;
-  // const { setInputText } = props;
-  // const { activities } = props;
-  // const { setActivites } = props;
+function Form({ activities, setActivities }) {
+  const [inputText, setInputText] = useState("");
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
-  }
-    
   };
+
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    setActivites([
-      ...activities,
-      { text: inputText, completed: false, id: Math.random() * 1000 },
-    ]);
+    setActivities((prev) => {
+      return [
+        ...prev, 
+        inputText
+      ];
+    });
     setInputText("");
   };
 
   return (
     <form>
-      <input value={inputText} onClick={inputTextHandler} type="text" className="todo-input" />
+      <input
+        value={inputText}
+        onChange={inputTextHandler}
+        type="text"
+        className="form-input"
+      />
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>

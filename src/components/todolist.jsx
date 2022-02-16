@@ -1,10 +1,18 @@
 import React from 'react';
-import '../components/css/todolist.module.css';
+import './css/todolist.module.css';
+import Todo from './Todo';
 
-function Todolist() {
-  return (
-    <div></div>
+const Todolist = ({activities}) => {
+
+    return (
+    <div className="todo-container">
+        <ul className="todo-list">
+            {activities.map(todo => (
+                <Todo text={todo.text} />
+            ))}
+        </ul>
+    </div>
   )
 }
 
-export default Todolist
+export default Todolist;
