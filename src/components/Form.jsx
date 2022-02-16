@@ -2,22 +2,30 @@ import React from "react";
 import "../components/css/form.module.css";
 
 function Form({ inputText, setInputText, activities, setActivites, }) {
+  
   const inputTextHandler = (e) => {
   const value = e.target.value;
-
-    console.log(value);
+  // const { inputText } = props;
+  // const { setInputText } = props;
+  // const { activities } = props;
+  // const { setActivites } = props;
+  const inputTextHandler = (e) => {
+    setInputText(e.target.value);
+  }
+    
   };
   const submitTodoHandler = (e) => {
     e.preventDefault();
     setActivites([
       ...activities,
-      { text: inputText, completed: false, id: Math.random() * 1000 }
+      { text: inputText, completed: false, id: Math.random() * 1000 },
     ]);
-  }
+    setInputText("");
+  };
 
   return (
     <form>
-      <input onClick={inputTextHandler} type="text" className="todo-input" />
+      <input value={inputText} onClick={inputTextHandler} type="text" className="todo-input" />
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
