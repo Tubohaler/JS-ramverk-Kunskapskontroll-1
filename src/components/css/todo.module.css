@@ -1,3 +1,5 @@
+
+
 .todo-list {
   min-width: 30%;
   list-style: none;
@@ -52,8 +54,4 @@ form button:hover {
 .fa-trash,
 .fa-check {
   pointer-events: none;
-}
-
-.todo-item {
-  padding: 0rem 0.5rem;
 }

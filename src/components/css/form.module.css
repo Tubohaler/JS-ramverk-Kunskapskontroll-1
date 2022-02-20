@@ -3,6 +3,8 @@ form button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
+  z-index: 2;
+
 }
 form button {
   color: #ff6f47;

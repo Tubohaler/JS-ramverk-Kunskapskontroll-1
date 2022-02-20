@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import styles from './css/todo.module.css';
+import './css/todo.module.css';
 
 const Todo = ({ activities, setActivities, text, id }) => {
 const [isCompleted, setIsCompleted] = useState(false);
-const buttonClass = isCompleted ? `${styles['completed-btn']}` : null;
-
 
   const deleteHandler = () => {
     const newActivities = [...activities].filter(
