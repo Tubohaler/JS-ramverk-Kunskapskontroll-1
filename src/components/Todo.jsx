@@ -1,29 +1,36 @@
-import React from "react";
-import './css/todo.module.css';
+import React, { useState } from 'react';
+import styles from './css/todo.module.css';
 
-const Todo = ( {activities, setActivities, todo, text, id} ) => {
+const Todo = ({ activities, setActivities, text, id }) => {
+const [isCompleted, setIsCompleted] = useState(false);
+const buttonClass = isCompleted ? `${styles['completed-btn']}` : null;
 
-    const deleteHandler = (text) => {
-        const newActivities = [...activities].filter(
-            (activities) => activities.id !== id);
-            setActivities(newActivities);
-            console.log(newActivities);
-    }
 
-    const completeHandler({activities})
-      const currentActivity = activities.find((activities) => {
-          return activities.id === activities.id;
-      })
+  const deleteHandler = () => {
+    const newActivities = [...activities].filter(
+      (activity) => activity !== id
+    );
+    console.log(newActivities, activities);
+    setActivities(newActivities);
+    console.log(newActivities);
+  };
+
+  const completeHandler = () => {
+        setIsCompleted(!isCompleted)
+    console.log(isCompleted);
+  };
 
   return (
     <div className="todo">
-      <li className="todo-item">{text}</li>
-      <button onClick={completeHandler} className="complete-btn">
+    <li className="todo-item" >
+      <button onClick={completeHandler}  className="complete-btn" >                    
         <i className="fas fa-check"></i>
       </button>
       <button onClick={deleteHandler} className="trash-btn">
         <i className="fas fa-trash"></i>
       </button>
+    <span className={text} style={ isCompleted ? { textDecoration: "line-through"} : {textDecoration: "none"} }>{text}</span> 
+    </li>
     </div>
   );
 };

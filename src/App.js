@@ -17,7 +17,7 @@ function App() {
         setActivities={setActivities}
       />
 
-      <Todolist activities={activities} />
+      <Todolist activities={activities} setActivities={setActivities} />
     </div>
   );
 }
