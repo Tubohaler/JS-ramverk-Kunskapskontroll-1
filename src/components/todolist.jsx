@@ -2,7 +2,7 @@ import React from 'react';
 import './css/todolist.module.css';
 import Todo from './Todo';
 
-const Todolist = ({ activities, setActivities }) => {
+const TodoList = ({ activities, setActivities }) => {
 
   return (
     <div className="todo-container">
@@ -21,4 +21,4 @@ const Todolist = ({ activities, setActivities }) => {
   );
 };
 
-export default Todolist;
+export default TodoList;
