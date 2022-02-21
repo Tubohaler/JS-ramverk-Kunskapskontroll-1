@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import './css/todo.module.css';
 
-const Todo = ({ activities, setActivities, text, id }) => {
+const Todo = ({ activities, setActivities, text, id, }) => {
   const [isCompleted, setIsCompleted] = useState(false);
 
   const deleteHandler = () => {
     const newActivities = [...activities].filter((activity) => activity !== id);
-    console.log(newActivities, activities);
     setActivities(newActivities);
-    console.log(newActivities);
   };
 
   const completeHandler = () => {
     setIsCompleted(!isCompleted);
-    console.log(isCompleted);
   };
 
   return (

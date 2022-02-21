@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './css/form.module.css';
 
-function Form({ activities, setActivities }) {
+function Form({ setActivities }) {
   const [inputText, setInputText] = useState("");
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
@@ -28,7 +28,7 @@ function Form({ activities, setActivities }) {
       </button>
 
       <div className="todo-container">
-        <ul className="todo-list"></ul>
+        <ul></ul>
       </div>
     </form>
   );

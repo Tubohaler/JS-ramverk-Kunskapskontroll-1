@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
-import Todolist from "./components/Todolist";
-import bakgrund from "./assets/bakgrund.jpeg";
+import TodoList from "./components/TodoList";
+import background from "./assets/background.jpeg";
 
 function App() {
   const [activities, setActivities] = useState([]);
@@ -11,9 +11,9 @@ function App() {
     <div className="App">
       <section>
         <img
-          src={bakgrund}
+          src={background}
           className="background-img"
-          alt="bakgrundsbild"
+          alt="background"
         ></img>
         <div className="color-overlay"></div>
       </section>
@@ -22,8 +22,8 @@ function App() {
         <h1 className="title">David's Todo-Shite!</h1>
       </header>
 
-      <Form activities={activities} setActivities={setActivities} />
-      <Todolist activities={activities} setActivities={setActivities} />
+      <Form setActivities={setActivities} />
+      <TodoList activities={activities} setActivities={setActivities} />
     </div>
   );
 }
