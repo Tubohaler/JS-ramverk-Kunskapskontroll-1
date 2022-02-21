@@ -2,7 +2,8 @@ import React from 'react';
 import './css/todolist.module.css';
 import Todo from './Todo';
 
-const TodoList = ({ activities, setActivities }) => {
+const Todolist = ({ activities, setActivities }) => {
+
   return (
     <div className="todo-container">
       <ul className="todo-list">
@@ -20,4 +21,4 @@ const TodoList = ({ activities, setActivities }) => {
   );
 };
 
-export default TodoList;
+export default Todolist;

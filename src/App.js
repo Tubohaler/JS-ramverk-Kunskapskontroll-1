@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
-import TodoList from "./components/TodoList";
+import Todolist from "./components/Todolist";
 import background from "./assets/background.jpeg";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
       </header>
 
       <Form setActivities={setActivities} />
-      <TodoList activities={activities} setActivities={setActivities} />
+      <Todolist activities={activities} setActivities={setActivities} />
     </div>
   );
 }
