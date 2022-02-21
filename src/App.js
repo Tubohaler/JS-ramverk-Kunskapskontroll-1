@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import Todolist from "./components/Todolist";
+import bakgrund from "./assets/bakgrund.jpeg";
 
 function App() {
   const [activities, setActivities] = useState([]);
@@ -9,8 +10,12 @@ function App() {
   return (
     <div className="App">
       <section>
-        <div className="overlay"></div>
-        <img className="background-img" alt=""></img>
+        <img
+          src={bakgrund}
+          className="background-img"
+          alt="bakgrundsbild"
+        ></img>
+        <div className="color-overlay"></div>
       </section>
 
       <header>

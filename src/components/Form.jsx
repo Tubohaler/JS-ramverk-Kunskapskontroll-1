@@ -10,10 +10,7 @@ function Form({ activities, setActivities }) {
   const submitTodoHandler = (e) => {
     e.preventDefault();
     setActivities((prev) => {
-      return [
-        ...prev, 
-        inputText
-      ];
+      return [...prev, inputText];
     });
     setInputText("");
   };
@@ -29,7 +26,6 @@ function Form({ activities, setActivities }) {
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
-      
 
       <div className="todo-container">
         <ul className="todo-list"></ul>
